@@ -12,12 +12,7 @@ let storage = [];
 // let isValid = false;
 // let isIndex = null;
 
-<<<<<<< HEAD
-
 const submitData = () => {
-=======
-const SubmitData = () => {
->>>>>>> 9db09263214afa33b3b70b3f311729d09fb26879
 
     event.preventDefault();
 
@@ -47,6 +42,7 @@ const SubmitData = () => {
 
         // isValid = false;
         // isIndex = null;
+        inputId.value = '';
     }else{
 
         let record = {
@@ -65,11 +61,6 @@ const SubmitData = () => {
 
     }
 
-<<<<<<< HEAD
-=======
-    storage.push(record);
-
->>>>>>> 9db09263214afa33b3b70b3f311729d09fb26879
     name.value = '';
     age.value = '';
     email.value = '';
@@ -121,9 +112,4 @@ const viewData = () => {
         document.getElementById('show').innerHTML += `<td>${rec.id}</td><td>${rec.name}</td><td>${rec.age}</td><td>${rec.email}</td><td>${rec.password}</td><td>${rec.address1}</td><td>${rec.address2}</td><td>${rec.city}</td><td>${rec.zip}</td><td><button class='btn text-bg-primary' onclick='handleEdit(${rec.id})'}>Update</button><button class='btn text-bg-danger' onclick='handleDelete(${rec.id})'}>Delete</button></td>`;
     });
 }
-<<<<<<< HEAD
-
 viewData();
-=======
-viewData();
->>>>>>> 9db09263214afa33b3b70b3f311729d09fb26879
