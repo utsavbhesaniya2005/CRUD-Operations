@@ -18,6 +18,20 @@ const submitData = () => {
 
     let id = inputId.value;
 
+    const addData = () => {
+        return record = {
+            id : Math.floor(Math.random() * 1000),
+            name : name.value,
+            age : age.value,
+            email : email.value,
+            password : password.value,
+            address1 : address1.value,
+            address2 : address2.value,
+            city : city.value,
+            zip : zip.value
+        }
+    }
+
     if(/*isValid*/id){
 
         storage = storage.map((getId) => {
@@ -25,14 +39,7 @@ const submitData = () => {
 
                 return {
                     id : /*isIndex*/id,
-                    name : name.value,
-                    age : age.value,
-                    email : email.value,
-                    password : password.value,
-                    address1 : address1.value,
-                    address2 : address2.value,
-                    city : city.value,
-                    zip : zip.value
+                    ...addData()
                 };
             }else{
 
@@ -45,34 +52,14 @@ const submitData = () => {
         inputId.value = '';
     }else{
 
-        let record = {
-            id : Math.floor(Math.random() * 1000),
-            name : name.value,
-            age : age.value,
-            email : email.value,
-            password : password.value,
-            address1 : address1.value,
-            address2 : address2.value,
-            city : city.value,
-            zip : zip.value
-        }
-    
-        storage.push(record);
+        addData();
 
+        storage.push(record);
     }
 
-    name.value = '';
-    age.value = '';
-    email.value = '';
-    password.value = '';
-    address1.value = '';
-    address2.value = '';
-    city.value = '';
-    zip.value = '';
+    name.value = age.value = email.value = password.value = address1.value =address2.value = city.value = zip.value = '';
 
     viewData();
-
-    console.log("Fvdgngb", id);
 }
 
 const handleEdit = (id) => {
@@ -100,7 +87,7 @@ const handleEdit = (id) => {
 const handleDelete = (id) => {
 
     storage = storage.filter((item) => item.id != id);
-
+    
     viewData();
 }   
 
